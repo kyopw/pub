@@ -1,3 +1,4 @@
+-- requer LUVIT e FROMAGE, o script nao funciona sem um dos dois
 local api = require("fromage")
 
 ------ edite apenas os parametros abaixo
