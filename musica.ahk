@@ -5,7 +5,7 @@ ar := StrSplit(contk,["[","]"])
 cons1 := ar.1
 cons2 := ar.2
 Sleep, 200
-http := "https://www.youtube.com/watch?v="
+http := "https://www.youtube.com/watch?"
 WinActivate, Transformice
 WinWaitActive, Transformice
 tocar := "!p"
@@ -28,7 +28,22 @@ While (cons2 contains false)
         text3 := arr.3 ; mensagem
         if text3 contains .play
         {
-            if text3 contains _
+            if text3 contains v=
+            {
+                Send, {Enter}
+                SendRaw, ...
+                Send, {Enter} 
+                Send, {Enter}
+                ;Send, Carregando arquivo, aguarde!
+                yt := StrSplit(text3,[" "])
+                tocado1 := yt.1 ; nada
+                tocado2 := yt.2 ; comando
+                tocado3 := yt.3 ; link
+                WinActivate, Mp3Skull - YouTube to Mp3 Converter - Vivaldi
+                WinWait, Mp3Skull - YouTube to Mp3 Converter - Vivaldi
+
+            }
+            else
             {
                 Send, {Enter} 
                 SendRaw, ._.
@@ -57,21 +72,6 @@ While (cons2 contains false)
                 SendRaw, yout
                 Sleep, 500
                 Send, {Enter}
-                WinActivate, Mp3Skull - YouTube to Mp3 Converter - Vivaldi
-                WinWait, Mp3Skull - YouTube to Mp3 Converter - Vivaldi
-
-            }
-            else
-            {
-                Send, {Enter}
-                SendRaw, ...
-                Send, {Enter} 
-                Send, {Enter}
-                ;Send, Carregando arquivo, aguarde!
-                yt := StrSplit(text3,[" "])
-                tocado1 := yt.1 ; nada
-                tocado2 := yt.2 ; comando
-                tocado3 := yt.3 ; link
                 WinActivate, Mp3Skull - YouTube to Mp3 Converter - Vivaldi
                 WinWait, Mp3Skull - YouTube to Mp3 Converter - Vivaldi
             }
