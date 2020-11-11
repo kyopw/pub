@@ -1,4 +1,4 @@
-local api = require('transfromage')
+local transfromage = require('transfromage')
 local client = transfromage.client()
 local user = 'nickname#0000'
 local senha = 'password1234'
