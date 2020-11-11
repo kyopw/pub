@@ -3,6 +3,7 @@ local client = transfromage.client()
 local user = 'nickname#0000'
 local senha = 'password1234'
 -- you will need python 3.2
+-- i dont know if its forbidden to use another language in the Task :oo maybe not? maybe i can?
 -- you can laugh just a bite
 local py = '\n# sorry for this, luasocket didnt works on my pc ;(\ntry:\n	f = open("page.lua", "w"); f.write(""); f.close() #reset file\nexcept:\n	f = open("page.lua", "x"); f.write(""); f.close()\n\nimport urllib.request\n\nlink = urllib.request.Request(request)\ntry:\n    response = urllib.request.urlopen(link)\nexcept:\n    print("o_0")\n\nhtmlBytes = response.read()\nhtmlStr = htmlBytes.decode("utf8")\nhtmlSplit = htmlStr.split("\\n")\n\nfor line in htmlSplit:\n	f = open("page.lua", "a")\n	f.write(line)\n	f.close()\nprint("sucess :o")'
 
