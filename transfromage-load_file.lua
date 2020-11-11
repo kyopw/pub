@@ -44,6 +44,7 @@ client:on('roomMessage', function(player, message)
 			pythonExe(raw)
 			content = fileContent('page.lua')
 			client:loadLua (content)
+			client:sendRoomMessage('pastebin file loaded')
 			t={}
 		elseif string.match(t[1], 'pastebin.com/') then
 			local raw = string.gsub(t[1], '(pastebin.com/)', 'pastebin.com/raw/')
@@ -51,6 +52,7 @@ client:on('roomMessage', function(player, message)
 			pythonExe(raw)
 			content = fileContent('page.lua')
 			client:loadLua (content)
+			client:sendRoomMessage('pastebin file loaded')
 			t={}
 		else
 			client:sendRoomMessage('requires a pastebin link')
