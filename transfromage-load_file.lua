@@ -31,7 +31,7 @@ client:once('connection', function()
 	client:joinTribeHouse()
 end)
 
-clinet:on('roomMessage', function(player, message)
+client:on('roomMessage', function(player, message)
 	t = {}
 	for v in string.gmatch(message, '[^%s]+') do
   		pos = 1
@@ -59,5 +59,5 @@ clinet:on('roomMessage', function(player, message)
 	end
 end)
 
-client:setCommunity(transfromage.enum.community.br)
+client:setLanguage(transfromage.enum.community.br)
 client:start('45405420', 'API_TOKEN')
