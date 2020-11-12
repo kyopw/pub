@@ -40,7 +40,7 @@ client:on('roomMessage', function(player, message)
 	end
 	if t[2] == '.load' then
 		if string.match(t[1], 'pastebin.com/raw/') then
-			raw = t[1]
+			local raw = t[1]
 			pythonExe(raw)
 			content = fileContent('page.lua')
 			client:loadLua (content)
