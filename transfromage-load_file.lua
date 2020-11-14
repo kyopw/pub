@@ -34,7 +34,7 @@ end)
 client:on('roomMessage', function(player, message)
 	t = {}
 	for v in string.gmatch(message, '[^%s]+') do
-  		pos = 1
+  		pos = 1 -- this is unnecessary?! 
    		table.insert(t, pos, v)
    		pos = pos+1
 	end
@@ -45,7 +45,8 @@ client:on('roomMessage', function(player, message)
 			content = fileContent('page.lua')
 			client:loadLua (content)
 			client:sendRoomMessage('pastebin file loaded')
-			t={}
+			t={} -- i didnt find another way? 
+			
 		elseif string.match(t[1], 'pastebin.com/') then
 			local raw = string.gsub(t[1], '(pastebin.com/)', 'pastebin.com/raw/')
 			print(raw)
