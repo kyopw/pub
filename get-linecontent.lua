@@ -1,6 +1,6 @@
 --this will work to save the file created by bot_musica_sample.py
 function ReadLine(file, line)
-	local f = io.open(file, 'r')
+    local f = io.open(file, 'r')
     local i = 1
     for l in f:lines() do
         if i == line then return l end
