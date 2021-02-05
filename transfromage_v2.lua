@@ -19,26 +19,26 @@ end)
 
 client:once('roomMessage', function(playerName, message, playerCommunity, playerId)
 	if string.match(message, '%.load') then --jajaja eficientifyyy1!!
-        local link = string.gsub(message, '(%.load )', '', 1)
-		if string.match(link, 'pastebin.com') then
-			for i=1, #pastebin do
+        local link = string.gsub(message, '(%.load )', '', 1) --remove .load
+		if string.match(link, 'pastebin.com') then --check if is a pastebin link
+			for i=1, #pastebin do --remove the pastebin.com part
 				if link == check or check == nil then
 					check = string.gsub(link, pastebin[i], '')
 				end
 			end
-			if string.len(check) > 7 then
-				local resp = {}
+			if string.len(check) > 7 then --check if is a valid key, this is to turn all links in pastebin.com/raw
+				local resp = {} 
 				local b, c, h = https.request{url = 'https://pastebin.com/raw/'..check, headers = { ['Connection'] = 'close' }, sink = ltn12.sink.table(resp)}   
-				if code~=200 then 
-    				client:sendRoomMessage('Error. Try again.') 
-    			else
-					if type(headers) == "table" then
-  						for k, v in pairs(headers) do
-    						print(k, ":", v)        
+				if c~=200 then --get code response
+    					client:sendRoomMessage('Error. Try again.') 
+    				else
+					if type(h) == "table" then
+  						for k, v in pairs(h) do
+    							print(k, ":", v)        
   						end
 					end
 					print(table.concat(resp))
-					client:loadLua(table.concat(resp))
+					client:loadLua(table.concat(resp)) --load lua etc
 					client:sendRoomMessage('Loaded.')
 				end
 			else
