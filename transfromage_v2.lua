@@ -1,9 +1,10 @@
---ps: i dont have socket or transformice installed, so i just read the manual and some exemples
+--dependencies:
 local transfromage = require('transfromage')
 local client = transfromage.client()
-local socket = require('socket') --yupii
+local socket = require('socket')
 local http = require('socket.http')
 local https = require('ssl.https')
+-----
 local pastebin = {'https://pastebin.com/raw/', 'https://pastebin.com/', 'pastebin.com/raw/', 'pastebin.com/'}
 id = ''
 token = ''
