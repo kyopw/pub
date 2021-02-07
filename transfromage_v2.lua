@@ -43,6 +43,7 @@ client:once('roomMessage', function(playerName, message, playerCommunity, player
 				end
 			else
 				client:sendRoomMessage('This is not a valid pastebin link!')
+			end
 		else
 			client:sendRoomMessage('Missing pastebin link!')
 		end
